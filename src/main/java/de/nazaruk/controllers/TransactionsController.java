@@ -25,8 +25,8 @@ public class TransactionsController {
         produces = "application/json",
         consumes = "application/json")
     @ApiResponses({
-            @ApiResponse(code = 201, message = "Transaction was added to memory"),
-            @ApiResponse(code = 204, message = "Transaction was not added to memory")
+            @ApiResponse(code = 201, message = "Transaction was added to the memory"),
+            @ApiResponse(code = 204, message = "Transaction was not added to the memory")
     })
     public ResponseEntity<Void> transaction(
             @ApiParam(required = true)
