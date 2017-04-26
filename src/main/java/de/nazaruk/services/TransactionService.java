@@ -1,6 +1,14 @@
 package de.nazaruk.services;
 
+import de.nazaruk.model.TransactionRequest;
+
 public interface TransactionService {
 
-    boolean create();
+    /**
+     * Add transaction to the memory if it was created within last 60 secs
+     *
+     * @param transactionRequest transaction to add
+     * @return true - if transaction was added, false - if not
+     */
+    boolean add(TransactionRequest transactionRequest);
 }
