@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TransactionRequest {
+public class Transaction {
 
     private double amount;
     private long timestamp;

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class StatisticsResponse {
+public class Statistics {
 
     private double sum;
     private double avg;

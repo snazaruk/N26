@@ -1,6 +1,6 @@
 package de.nazaruk.services;
 
-import de.nazaruk.model.TransactionRequest;
+import de.nazaruk.model.Transaction;
 
 public interface TransactionService {
 
@@ -10,5 +10,5 @@ public interface TransactionService {
      * @param transactionRequest transaction to add
      * @return true - if transaction was added, false - if not
      */
-    boolean add(TransactionRequest transactionRequest);
+    boolean add(Transaction transactionRequest);
 }
