@@ -26,7 +26,7 @@ public class SwaggerConfiguration extends WebMvcConfigurerAdapter {
                 .build()
                 .pathMapping("/")
                 .apiInfo(new ApiInfoBuilder()
-                        .title("N26 Test assignment API")
+                        .title("N26 Test assignment API. Enjoy :)")
                         .build());
     }
 

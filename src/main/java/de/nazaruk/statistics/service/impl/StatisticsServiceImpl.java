@@ -11,19 +11,11 @@ import org.springframework.stereotype.Service;
 public class StatisticsServiceImpl implements StatisticsService {
 
     @Autowired
-    private TimeUtils timeUtils;
-
-    @Autowired
     private InMemoryStorage statisticsStorage;
 
     @Override
     public boolean add(Transaction transaction) {
-        if (timeUtils.isWithinLast60sec(transaction.getTimestamp())) {
-            statisticsStorage.addTransaction(transaction);
-            return true;
-        }
-        return false;
-
+        return statisticsStorage.addTransaction(transaction);
     }
 
     @Override

@@ -30,10 +30,12 @@ public class Statistics {
     }
 
     public Statistics aggregate(Statistics statistics) {
-        setCount(getCount() + statistics.getCount());
+        if (statistics.count == 0) return this;
+
+        setMax(count == 0 ? statistics.getMax() : Math.max(getMax(), statistics.getMax()));
+        setMin(count == 0 ? statistics.getMin() : Math.min(getMin(), statistics.getMin()));
         setSum(getSum() + statistics.getSum());
-        setMax(Math.max(getMax(), statistics.getMax()));
-        setMin(Math.min(getMin(), statistics.getMin()));
+        setCount(getCount() + statistics.getCount());
 
         return this;
     }

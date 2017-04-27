@@ -1,4 +1,4 @@
-package de.nazaruk.statistics.service.impl;
+package de.nazaruk.statistics.service.impl.storage;
 
 import org.springframework.stereotype.Component;
 
@@ -22,11 +22,13 @@ public class TimeUtils {
      * @return seconds
      */
     public int getSecondsWithinAMinute(long timestampInSeconds) {
-        return (int) (timestampInSeconds /1000 % 60);
+        return (int) (timestampInSeconds % 60);
     }
 
     /**
-     * Converts milliseconds to seconds.
+     * Rounds milliseconds to seconds. Example:
+     *  - 555 milliseconds -> 0 seconds
+     *  - 3212 milliseconds -> 3 seconds
      * @param timestampInMillis timestamp in milliseconds
      * @return seconds
      */
