@@ -13,16 +13,21 @@ public class StatisticsServiceImpl implements StatisticsService {
     private TimeUtils timeUtils;
 
     @Autowired
-    private StatisticsInMemoryStorage statisticsStorage;
+    private InMemoryStorage statisticsStorage;
 
 
     @Override
     public Statistics getStatisticsForTheLast60Sec() {
-        return null;
+        return statisticsStorage.getStatisticsForLast60Sec();
     }
 
     @Override
-    public void addTransaction(Transaction transaction) {
-        statisticsStorage.addTransaction(transaction);
+    public boolean add(Transaction transaction) {
+        if (timeUtils.isWithinLast60sec(transaction.getTimestamp())) {
+            statisticsStorage.addTransaction(transaction);
+            return true;
+        }
+        return false;
+
     }
 }

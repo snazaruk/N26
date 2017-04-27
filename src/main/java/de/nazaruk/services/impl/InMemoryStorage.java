@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Component
-public class StatisticsInMemoryStorage {
+public class InMemoryStorage {
 
     @Autowired
     private TimeUtils timeUtils;
@@ -41,7 +41,8 @@ public class StatisticsInMemoryStorage {
         }
     }
 
-    public void getAggregatedStatisticsForLast60Sec() {
+    public Statistics getStatisticsForLast60Sec() {
 
+        return null;
     }
 }
