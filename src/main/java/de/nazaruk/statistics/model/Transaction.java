@@ -1,4 +1,4 @@
-package de.nazaruk.model;
+package de.nazaruk.statistics.model;
 
 import lombok.Getter;
 import lombok.Setter;

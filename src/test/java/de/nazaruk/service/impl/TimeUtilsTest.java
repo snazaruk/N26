@@ -1,4 +1,4 @@
-package de.nazaruk.services.impl;
+package de.nazaruk.statistics.service.impl;
 
 import org.junit.Test;
 

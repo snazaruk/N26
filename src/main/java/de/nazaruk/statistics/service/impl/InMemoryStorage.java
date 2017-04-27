@@ -1,9 +1,8 @@
-package de.nazaruk.services.impl;
+package de.nazaruk.statistics.service.impl;
 
-import de.nazaruk.model.Statistics;
-import de.nazaruk.model.Transaction;
+import de.nazaruk.statistics.model.Statistics;
+import de.nazaruk.statistics.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CopyOnWriteArrayList;

@@ -1,7 +1,7 @@
-package de.nazaruk.services;
+package de.nazaruk.statistics.service;
 
-import de.nazaruk.model.Statistics;
-import de.nazaruk.model.Transaction;
+import de.nazaruk.statistics.model.Statistics;
+import de.nazaruk.statistics.model.Transaction;
 
 public interface StatisticsService {
 

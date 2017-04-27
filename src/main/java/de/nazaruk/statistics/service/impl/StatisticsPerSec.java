@@ -1,6 +1,6 @@
-package de.nazaruk.services.impl;
+package de.nazaruk.statistics.service.impl;
 
-import de.nazaruk.model.Statistics;
+import de.nazaruk.statistics.model.Statistics;
 import lombok.Getter;
 import lombok.Setter;
 
