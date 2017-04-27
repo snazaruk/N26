@@ -12,6 +12,9 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Autowired
     private TimeUtils timeUtils;
 
+    @Autowired
+    private StatisticsInMemoryStorage statisticsStorage;
+
 
     @Override
     public Statistics getStatisticsForTheLast60Sec() {
@@ -20,6 +23,6 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     @Override
     public void addTransaction(Transaction transaction) {
-        //funny part starts :)
+        statisticsStorage.addTransaction(transaction);
     }
 }

@@ -2,11 +2,14 @@ package de.nazaruk.services.impl;
 
 import org.junit.Test;
 
-import java.time.Instant;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+
+import static java.time.ZoneOffset.UTC;
 
 public class TimeUtilsTest {
 
@@ -25,4 +28,15 @@ public class TimeUtilsTest {
         assertFalse(timeUtils.isWithinLast60sec(Instant.now().minus(60, ChronoUnit.SECONDS).toEpochMilli()));
         assertFalse(timeUtils.isWithinLast60sec(Instant.now().minus(61, ChronoUnit.SECONDS).toEpochMilli()));
     }
+
+    @Test
+    public void to_seconds() {
+        assertEquals(34, timeUtils.getSecondsWithinAMinute(LocalDateTime.of(2017, 4, 26, 23, 47, 34).toInstant(UTC).toEpochMilli()));
+        assertEquals(0, timeUtils.getSecondsWithinAMinute(LocalDateTime.of(2000, 1, 6, 3, 43, 0).toInstant(UTC).toEpochMilli()));
+        assertEquals(59, timeUtils.getSecondsWithinAMinute(LocalDateTime.of(2022, 4, 3, 23, 59, 59).toInstant(UTC).toEpochMilli()));
+        assertEquals(59, timeUtils.getSecondsWithinAMinute(LocalDateTime.of(2022, 4, 3, 23, 59, 59).toInstant(UTC)
+                .plus(3, ChronoUnit.MILLIS).toEpochMilli()));
+    }
+
+
 }

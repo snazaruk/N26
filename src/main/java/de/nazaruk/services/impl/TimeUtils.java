@@ -16,4 +16,11 @@ public class TimeUtils {
                 now.isAfter(transactionTimestamp);
     }
 
+    /**
+     * Returns seconds within a minute. Possible values: [0, 59]
+     */
+    public int getSecondsWithinAMinute(long timestamp) {
+        return (int) (timestamp /1000 % 60);
+    }
+
 }
