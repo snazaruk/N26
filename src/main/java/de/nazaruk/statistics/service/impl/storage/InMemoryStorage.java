@@ -10,6 +10,8 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 @Component
 public class InMemoryStorage {
 
+    public static final AggregationFunction AGGREGATION_FUNCTION = new AggregationFunction();
+
     @Autowired
     private TimeUtils timeUtils;
 
@@ -34,7 +36,7 @@ public class InMemoryStorage {
         StatisticsPerSec newStatisticsPerSec = new StatisticsPerSec(transactionTimestampInSeconds, Statistics.fromTransaction(transaction));
         if (currentStatisticsPerSec != null
             && timeUtils.isWithinLast60sec(currentStatisticsPerSec.getTimestampInSeconds())) {
-            statisticsPerLast60Sec.accumulateAndGet(seconds, newStatisticsPerSec, new AggregationFunction());
+            statisticsPerLast60Sec.accumulateAndGet(seconds, newStatisticsPerSec, AGGREGATION_FUNCTION);
         } else {
             statisticsPerLast60Sec.set(seconds, newStatisticsPerSec);
         }
