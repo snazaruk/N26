@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Transaction accepts positive and negative values for amount and timestamp.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
