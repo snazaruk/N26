@@ -1,17 +1,16 @@
-package de.nazaruk.statistics.service.impl;
+package de.nazaruk.statistics.service.impl.storage;
 
 import de.nazaruk.statistics.model.Statistics;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class StatisticsPerSec {
 
-    private final long timestamp;
+    private long timestampInSeconds;
     private Statistics statistics;
 
-    public StatisticsPerSec(long timestamp) {
-        this.timestamp = timestamp;
-    }
 }

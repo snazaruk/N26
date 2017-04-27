@@ -1,8 +1,5 @@
 package de.nazaruk.statistics.controller;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.NO_CONTENT;
-
 import de.nazaruk.statistics.model.Statistics;
 import de.nazaruk.statistics.model.Transaction;
 import de.nazaruk.statistics.service.StatisticsService;
@@ -14,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 @Controller
 public class StatisticsController {
