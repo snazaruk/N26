@@ -21,8 +21,7 @@ public class StatisticsController {
     @Autowired
     private StatisticsService statisticsService;
 
-    @RequestMapping(value = "/transactions", method = RequestMethod.POST,
-            consumes = "application/json")
+    @RequestMapping(value = "/transactions", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> transaction(@RequestBody Transaction transactionRequest) {
         boolean wasAdded = statisticsService.add(transactionRequest);
 
