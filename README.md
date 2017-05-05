@@ -1,5 +1,3 @@
-# N26 Code Challenge
-
 **Building**
 
 1. Build
