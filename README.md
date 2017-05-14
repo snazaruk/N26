@@ -10,7 +10,3 @@
 
 3. Go to http://localhost:9080/ and try out some requests with Swagger UI
 
-****
-**Description**
-
-Rest API for collecting statistics with O(1)
